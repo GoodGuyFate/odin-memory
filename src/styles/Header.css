@@ -1,0 +1,115 @@
+.header {
+  width: 100%;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(200, 170, 110, 0.25);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(10, 20, 40, 0.4) 100%
+  );
+  backdrop-filter: blur(8px);
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+/* Decorative corner accent — top left */
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  border-top: 2px solid var(--lol-gold);
+  border-left: 2px solid var(--lol-gold);
+  pointer-events: none;
+}
+
+/* Decorative corner accent — top right */
+.header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  border-top: 2px solid var(--lol-gold);
+  border-right: 2px solid var(--lol-gold);
+  pointer-events: none;
+}
+
+.header__title {
+  font-family: 'Beaufort for LOL', 'Cinzel', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lol-gold);
+  text-shadow:
+    0 0 20px rgba(200, 170, 110, 0.5),
+    0 2px 4px rgba(0, 0, 0, 0.8);
+  margin: 0;
+}
+
+.header__title span {
+  color: #f0e6d3;
+}
+
+.header__scores {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.header__score-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.header__score-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(200, 170, 110, 0.6);
+}
+
+.header__score-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #f0e6d3;
+  text-shadow: 0 0 10px rgba(200, 170, 110, 0.4);
+  line-height: 1;
+}
+
+/* Divider between scores */
+.header__score-divider {
+  width: 1px;
+  height: 2rem;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(200, 170, 110, 0.4),
+    transparent
+  );
+}
+
+@media (max-width: 560px) {
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .header__title {
+    font-size: 1.3rem;
+  }
+
+  .header__scores {
+    gap: 1.2rem;
+  }
+}

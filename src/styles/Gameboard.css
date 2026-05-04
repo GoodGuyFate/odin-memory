@@ -1,0 +1,33 @@
+.gameboard {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(6, 120px);
+  margin: 0 auto; 
+}
+
+
+@media (max-width: 800px) {
+  .gameboard {
+    grid-template-columns: repeat(4, 120px);  /* tablet */
+  }
+}
+
+@media (max-width: 560px) {
+  .gameboard {
+    grid-template-columns: repeat(3, 90px);  /* mobile */
+  }
+}
+
+.card {
+  aspect-ratio: 1 / 1;
+   width: 100%; 
+  border: 2px solid #c8aa6e;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
