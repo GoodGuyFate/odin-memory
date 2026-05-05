@@ -1,21 +1,16 @@
-import '../styles/Gameboard.css';
+import "../styles/Gameboard.css";
 
-export default function Gameboard() {
-    return (
+export default function Gameboard({ champions }) {
+  return (
     <div className="gameboard">
-      {/* 12 hardcoded cards */}
-      <div className="card"><img src="https://placehold.co/400x400" alt="placeholder" /></div>
-      <div className="card"><img src="https://placehold.co/400x400" alt="placeholder" /></div>
-      <div className="card"><img src="https://placehold.co/400x400" alt="placeholder" /></div>
-      <div className="card"><img src="https://placehold.co/400x400" alt="placeholder" /></div>
-      <div className="card"><img src="https://placehold.co/400x400" alt="placeholder" /></div>
-      <div className="card"><img src="https://placehold.co/400x400" alt="placeholder" /></div>
-      <div className="card"><img src="https://placehold.co/400x400" alt="placeholder" /></div>
-      <div className="card"><img src="https://placehold.co/400x400" alt="placeholder" /></div>
-      <div className="card"><img src="https://placehold.co/400x400" alt="placeholder" /></div>
-      <div className="card"><img src="https://placehold.co/400x400" alt="placeholder" /></div>
-      <div className="card"><img src="https://placehold.co/400x400" alt="placeholder" /></div>
-      <div className="card"><img src="https://placehold.co/400x400" alt="placeholder" /></div>
+      {champions.map((champion) => (
+        <div key={champion.id} className="card">
+          <img
+            src={`https://ddragon.leagueoflegends.com/cdn/15.8.1/img/champion/${champion.id}.png`}
+            alt={champion.id}
+          />
+        </div>
+      ))}
     </div>
   );
 }

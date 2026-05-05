@@ -1,7 +1,7 @@
 .footer {
   width: 100%;
   padding: 1.25rem 2rem;
-    margin-top: auto;
+  margin-top: auto;
   border-top: 1px solid rgba(200, 170, 110, 0.25);
   background: linear-gradient(
     0deg,
@@ -17,7 +17,7 @@
 
 /* Decorative corner accent — bottom left */
 .footer::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -30,7 +30,7 @@
 
 /* Decorative corner accent — bottom right */
 .footer::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   right: 0;
@@ -52,7 +52,9 @@
   letter-spacing: 0.08em;
   color: var(--lol-gold);
   text-decoration: none;
-  transition: color 0.2s ease, text-shadow 0.2s ease;
+  transition:
+    color 0.2s ease,
+    text-shadow 0.2s ease;
 }
 
 .footer__link:hover {

@@ -17,7 +17,7 @@
 
 /* Decorative corner accent — top left */
 .header::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -30,7 +30,7 @@
 
 /* Decorative corner accent — top right */
 .header::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -42,7 +42,7 @@
 }
 
 .header__title {
-  font-family: 'Beaufort for LOL', 'Cinzel', serif;
+  font-family: "Beaufort for LOL", "Cinzel", serif;
   font-size: 1.8rem;
   font-weight: 700;
   letter-spacing: 0.12em;
