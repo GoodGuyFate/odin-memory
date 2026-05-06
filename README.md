@@ -1,16 +1,34 @@
-# React + Vite
+# League of Legends Memory Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A memory card game built with React, using the [League of Legends Data Dragon API](https://developer.riotgames.com/docs/lol) to display random champion cards. Built as part of [The Odin Project](https://www.theodinproject.com/) curriculum.
 
-Currently, two official plugins are available:
+## How to Play
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Each round you're shown 12 random League of Legends champions. Click each card once — but don't click the same champion twice! Cards shuffle after every click to keep you on your toes.
 
-## React Compiler
+- ✅ Click a new champion → score goes up
+- ❌ Click the same champion twice → score resets
+- 🏆 Click all 12 without repeating → you win
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Your best score is saved between sessions.
 
-## Expanding the ESLint configuration
+## What I Built
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Fetches champion data from the Data Dragon API on load
+- Randomly selects 12 champions and shuffles them using a Fisher-Yates shuffle
+- Tracks clicked cards using `useRef` with a `Set` for O(1) lookup
+- Score and best score managed with `useState`, best score persisted with `localStorage`
+- Responsive grid layout (6 / 4 / 3 columns for desktop / tablet / mobile)
+- LoL-themed UI with gold accents and corner bracket styling
+
+## Tech Stack
+
+React · Vite · CSS · Data Dragon API
+
+## Live Demo
+
+[Play it on Vercel](https://odin-memory-ecru.vercel.app/) 
+
+---
+
+*Not affiliated with Riot Games. League of Legends assets used for educational purposes.*
