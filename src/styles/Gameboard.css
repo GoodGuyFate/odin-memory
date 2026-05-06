@@ -18,15 +18,23 @@
 }
 
 .card {
-  aspect-ratio: 1 / 1;
   width: 100%;
   border: 2px solid #c8aa6e;
   border-radius: 8px;
-  overflow: hidden;
+  background-color: #1a1a1a; /* Adds background so text is readable */
+  text-align: center;
 }
 
 .card img {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 1 / 1; /* Keep the image square */
   object-fit: cover;
+  display: block; /* Removes weird bottom whitespace */
+}
+
+.card p {
+  padding: 0.5rem;
+  margin: 0;
+  color: #c8aa6e;
+  font-size: 0.9rem;
 }

@@ -10,6 +10,7 @@ export default function Gameboard({ champions, onCardClick }) {
             alt={champion.id}
             onClick={() => onCardClick(champion.id)}
           />
+          <p>{champion.name}</p>
         </div>
       ))}
     </div>
