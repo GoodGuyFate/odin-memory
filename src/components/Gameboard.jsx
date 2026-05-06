@@ -1,6 +1,6 @@
 import "../styles/Gameboard.css";
 
-export default function Gameboard({ champions }) {
+export default function Gameboard({ champions, onCardClick }) {
   return (
     <div className="gameboard">
       {champions.map((champion) => (
@@ -8,6 +8,7 @@ export default function Gameboard({ champions }) {
           <img
             src={`https://ddragon.leagueoflegends.com/cdn/15.8.1/img/champion/${champion.id}.png`}
             alt={champion.id}
+            onClick={() => onCardClick(champion.id)}
           />
         </div>
       ))}

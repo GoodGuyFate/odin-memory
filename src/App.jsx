@@ -19,10 +19,8 @@ function shuffle(array) {
 export default function App() {
   const [champions, setChampions] = useState([]); // the 12 cards
   const [score, setScore] = useState(0);
-  const [best, setBest] = useState(0);
+  const [best, setBest] = useState(localStorage.getItem("best") || 0);
   const clicked = useRef(new Set());
-
-  console.log(champions);
 
   useEffect(() => {
     async function fetchChampions() {
@@ -35,11 +33,30 @@ export default function App() {
     fetchChampions();
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem("best", String(best));
+  }, [best]);
+
+  function clickHandler(championID) {
+    if (clicked.current.has(championID)) {
+      clicked.current.clear();
+      setScore(0);
+      setChampions(shuffle(champions));
+    } else {
+      clicked.current.add(championID);
+      setScore((prevScore) => prevScore + 1);
+      setChampions(shuffle(champions));
+      if (score + 1 > best) {
+        setBest(score + 1);
+      }
+    }
+  }
+
   return (
     <div className="app">
-      <Header />
+      <Header score={score} best={best} />
       <main>
-        <GameBoard champions={champions} />
+        <GameBoard champions={champions} onCardClick={clickHandler} />
       </main>
       <Footer />
     </div>
